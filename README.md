@@ -70,32 +70,30 @@ Recently, learning-based models have enhanced the performance of single-image su
 ![adjacent frame similarity](https://github.com/yakesh199/SpectraFrame/blob/main/images/SpectraFramer_AFS.png)
 <p align="center">Figure 1: Adjacent frame similarity</p>
  
-![network arch](https://github.com/yakesh199/SpectraFrame/blob/master/images/SpectraFrame_NNArch.jpg)
+![network arch](https://github.com/yakesh199/SpectraFrame/blob/main/images/SpectraFrame_NNArch.jpg)
 <p align="center">Figure 2: Network architecture</p>
 
 ## Model Architecture
 
 Figure 2 shows the SpectraFrame architecture that consists of and SRGAN  as its generator and discriminator respectively. RBPN has two approaches that extract missing details from different sources, namely SISR and MISR. Figure 3 shows the horizontal flow (represented by blue arrows in Fig. 2) that enlarges LR(t) using SISR. Figure 4 shows the vertical flow (represented by red arrows in Figure 2) which is based on MISR that computes residual features from a pair of LR(t) and its neighboring frames (LR(t−1), ..., LR(t−n) coupled with the pre-computed dense motion flow maps (F(t−1), ..., F(t−n)). At each projection step, RBPN observes the missing details from LR(t) and extracts residual features from neighboring frames to recover details. Within the projection models, RBPN utilizes a recurrent encoder-decoder mechanism for fusing details extracted from adjacent frames in SISR and MISR and incorporates them into the estimated frame SR(t) through back-projection. Once an SR frame is synthesized, it is sent over to the discriminator (shown in Figure 5) to validate its "authenticity". 
 
-![ResNet_MISR](https://github.com/amanchadha/SpectraFrame/blob/master/images/ResNet_MISR.jpg)
+![ResNet_MISR](https://github.com/yakesh199/SpectraFrame/blob/main/images/ResNet_MISR.jpg)
 <p align="center">Figure 3: ResNet architecture for MISR that is composed of three tiles of five blocks where each block consists of two convolutional layers with 3 x 3 kernels, stride of 1 and padding of 1. The network uses Parametric ReLUs for its activations.</p>
 
-![DBPN_SISR](https://github.com/amanchadha/SpectraFrame/blob/master/images/DBPN_SISR.png)
+![DBPN_SISR](https://github.com/yakesh199/SpectraFrame/blob/main/images/DBPN_SISR.png)
 <p align="center">Figure 4: DBPN architecture for SISR, where we perform up-down-up sampling using 8 x 8 kernels with stride of 4, padding of 2. Similar to the ResNet architecture above, the DBPN network also uses Parametric ReLUs as its activation functions.</p>
 
-![Disc](https://github.com/amanchadha/SpectraFrame/blob/master/images/Disc.jpg)
+![Disc](https://github.com/yakesh199/SpectraFrame/blob/main/images/Disc.jpg)
 <p align="center">Figure 5: Discriminator Architecture from SRGAN. The discriminator uses Leaky ReLUs for computing its activations.</p>
 
-![iSB_Loss](https://github.com/amanchadha/SpectraFrame/blob/master/images/SpectraFrame_Loss.png)
+![iSB_Loss](https://github.com/yakesh199/SpectraFrame/blob/main/images/SpectraFrame_Loss.png))
 <p align="center">Figure 6: The MSE, perceptual, adversarial, and TV loss components of the SpectraFrame loss function</p>
 
 ## Dataset
 
 To train SpectraFrame, we amalgamated diverse datasets with differing video lengths, resolutions, motion sequences and number of clips. Table 1 presents a summary of the datasets used. When training our model, we generated the corresponding LR frame for each HR input frame by performing 4x down-sampling using bicubic interpolation. We also applied data augmentation techniques such as rotation, flipping and random cropping. To extend our dataset further, we wrote scripts to collect additional data from YouTube, bringing our dataset total to about 170,000 clips which were shuffled for training and testing. Our training/validation/test split was 80\%/10\%/10%.
 
-Get the [SPMCS and Vid4 dataset](https://drive.google.com/drive/folders/1sI41DH5TUNBKkxRJ-_w5rUf90rN97UFn?usp=sharing) and the [Vimeo90K dataset](http://data.csail.mit.edu/tofu/dataset/vimeo_septuplet.zip). You can also use ```DatasetFetcher.py``` to get Vimeo90K.
-
-![results](https://github.com/amanchadha/SpectraFrame/blob/master/images/Dataset.jpg)
+![results](https://github.com/yakesh199/SpectraFrame/blob/main/images/Dataset.jpg)
 <p align="center">Table 1. Datasets used for training and evaluation</p>
 
 ## Results
