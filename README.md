@@ -30,11 +30,6 @@ Step 0: To load the required Python modules:
 ```bash
 pip3 install -r requirements.txt
 ```
-
-Also needed is [Pyflow](https://github.com/pathak22/pyflow) which is a Python wrapper for [Ce Liu's C++ implementation](https://people.csail.mit.edu/celiu/OpticalFlow/) of Coarse2Fine Optical Flow.
-Pyflow binaries that we used have been built for Ubuntu and macOS with Python 3.7 and are available in the repository.
-If you need to rebuild Pyflow, (i) simply follow the instructions below or (ii) refer to the [Pyflow Git](https://github.com/pathak22/pyflow)
-
 Step 1: Build Pyflow:
 ```bash
 cd pyflow/
@@ -72,7 +67,7 @@ Finally, with extensive experimentation, our results demonstrate that SpectraFra
 
 Recently, learning-based models have enhanced the performance of single-image super-resolution (SISR). However, applying SISR successively to each video frame leads to a lack of temporal coherency. Convolutional neural networks (CNNs) outperform traditional approaches in terms of image quality metrics such as peak signal to noise ratio (PSNR) and structural similarity (SSIM). However, generative adversarial networks (GANs) offer a competitive advantage by being able to mitigate the issue of a lack of finer texture details, usually seen with CNNs when super-resolving at large upscaling factors. We present SpectraFrame, a novel GAN-based spatio-temporal approach to video super-resolution (VSR) that renders temporally consistent super-resolution videos. SpectraFrame extracts spatial and temporal information from the current and neighboring frames using the concept of recurrent back-projection networks as its generator. Furthermore, to improve the "naturality" of the super-resolved image while eliminating artifacts seen with traditional algorithms, we utilize the discriminator from super-resolution generative adversarial network (SRGAN). Although mean squared error (MSE) as a primary loss-minimization objective improves PSNR/SSIM, these metrics may not capture fine details in the image resulting in misrepresentation of perceptual quality. To address this, we use a four-fold (MSE, perceptual, adversarial, and total-variation (TV)) loss function. Our results demonstrate that SpectraFrame offers superior VSR fidelity and surpasses state-of-the-art performance.
  
-![adjacent frame similarity]([https://github.com/yakesh199/SpectraFrame/blob/main/images/SpectraFramer_AFS.png])
+![adjacent frame similarity](https://github.com/yakesh199/SpectraFrame/blob/main/images/SpectraFramer_AFS.png)
 <p align="center">Figure 1: Adjacent frame similarity</p>
  
 ![network arch](https://github.com/yakesh199/SpectraFrame/blob/master/images/SpectraFrame_NNArch.jpg)
