@@ -100,11 +100,8 @@ To train SpectraFrame, we amalgamated diverse datasets with differing video leng
 
 We compared SpectraFrame with six state-of-the-art VSR algorithms: DBPN, B123 + T, DRDVSR, FRVSR, VSR-DUF and RBPN/6-PF.
 
-![results2](https://github.com/amanchadha/SpectraFrame/blob/master/images/Res1.jpg)
+![results2](https://github.com/yakesh199/SpectraFrame/blob/main/images/Res1.png)
 <p align="center">Table 2. Visually inspecting examples from Vid4, SPMCS and Vimeo-90k comparing RBPN and SpectraFrame. We chose VSR-DUF for comparison because it was the state-of-the-art at the time of publication. Top row: fine-grained textual features that help with readability; middle row: intricate high-frequency image details; bottom row: camera panning motion.</p>
-
-![results1](https://github.com/amanchadha/SpectraFrame/blob/master/images/Res2.jpg)
-<p align="center">Table 3. PSNR/SSIM evaluation of state-of-the-art VSR algorithms using Vid4 for 4x. Bold numbers indicate best performance.</p>
 
 ## Pretrained Model
 Model trained for 4 epochs included under ```weights/```
@@ -126,8 +123,3 @@ To use the pre-trained model and test on a random video from within the dataset:
 ```python3 SpectraFrameTest.py```
 
 Use parameter ```--upscale_only``` to turn off initial downscaling.
-
-## Credits
-
-- [SRGAN Implementation](https://github.com/leftthomas/SRGAN) by LeftThomas.
-- We used [RBPN-PyTorch](https://github.com/alterzero/RBPN-PyTorch) as a baseline for our Generator implementation.
