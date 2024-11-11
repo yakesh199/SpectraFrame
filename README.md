@@ -10,7 +10,7 @@ This is the official PyTorch implementation of our paper.
 
 ---
 
-### PDF:**[SpectraFrame]([https://drive.google.com/file/d/1Um25ogqAXV9TCq-Z5VTtMZWr2ZPJbwkO/view?usp=sharing](https://drive.google.com/file/d/1rxQJOqtz3sMt9rfAURYcGpu-uYeGsCUj/view?usp=sharing))**
+### PDF:**[SpectraFrame](https://drive.google.com/file/d/1rxQJOqtz3sMt9rfAURYcGpu-uYeGsCUj/view?usp=sharing)**
 
 ---
 ---
