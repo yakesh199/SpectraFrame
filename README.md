@@ -114,7 +114,6 @@ Train the model using:
 
 ```python3 SpectraFrameTrain.py```
 
-(takes roughly 1.5 hours per epoch with a batch size of 2 on an NVIDIA Tesla V100 with 16GB VRAM)
 
 ### Testing
 
